@@ -1,3 +1,3 @@
-import { fetchZipcode } from "./fetchApi.js";
+import { fetchWeather } from "./fetchApi.js";
 
 
