@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#container{
+    background: lightblue;
+    width: 500px;
+    height: 75vh;
+    border: 2px solid darkblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+div#searchBar {
+    background-color: red;
+    padding: 15px;
+    border: 5px solid orange;
+}
+
+div#weatherReport {
+    background: pink;
+    margin-top: 2em;
+    border: 5px solid green;
+    width: 100%;
+    height: 100%;
+}
+
