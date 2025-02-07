@@ -21,7 +21,6 @@ export async function fetchWeather(zipCode) {
         }
         // parse data
         const weatherData = await response.json();
-        console.log(weatherData);
 
         //check for empty json 
         if (weatherData.currentConditions.length === 0) {
@@ -52,7 +51,3 @@ export async function fetchWeather(zipCode) {
 
 
 fetchZipcode(64131);
-
-
-// let zipInput = document.querySelector("searchBar");
-// let zi
