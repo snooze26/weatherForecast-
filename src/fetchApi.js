@@ -1,4 +1,4 @@
-export async function fetchZipcode(zipCode) {
+export async function fetchWeather(zipCode) {
     // capture zipcode in api
     const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${zipCode}?unitGroup=us&key=XDMJ5JHTFD5JRG59BXPBFECYS&contentType=json`
     const myHeaders = new Headers(); 
