@@ -15,7 +15,7 @@
         <div id="weatherReport">
 
             <div id="formContainer">
-                <form action="getData">
+                <form action="getData" id="form">
                     <div id="searchBar">
                         <label for="search" id="searchLabel">Enter Zipcode here:  </label>
                         <input type="search" id="searchInput" placeholder="Enter Zipcode:" autocomplete required>
@@ -24,22 +24,29 @@
                 </form>
             </div>
             <div id="showWeather">
-                    <Table>
-                        <tr id="headerRow">
-                            <th class="headerCell">Temp:</th>
-                            <th class="headerCell">Feels Like:</th>
-                            <th class="headerCell">Date / Time</th>
-                            <th class="headerCell">Description:</th>
-                            <th class="headerCell">Percipitation Type:</th>
-                        </tr>
-                        <tr id="dataRow">
-                            <td class="dataCell" id="tempData">50 degrees</td>
-                            <td class="dataCell"  id="feelsLikeData">Hot</td>
-                            <td class="dataCell"  id="dateTimeData">Now</td>
-                            <td class="dataCell"  id="descriptionData">It's so hot, stay inside</td>
-                            <td class="dataCell"  id="percipTypeData">Rain</td>
-                        </tr>
-                        
+                    <Table id="weather">
+                        <tbody id="weatherDataBody">
+                            <tr class="rows" id="tempRow">
+                                <th class="headerCell">Temp:</th>
+                                <td class="dataCell" id="tempData"></td>
+                            </tr>
+                            <tr class="rows" id="feelsLikeRow">
+                                <th class="headerCell">Temp:</th>
+                                <td class="dataCell"  id="feelsLikeData"></td>
+                            </tr>
+                            <tr class="rows" id="timeRow">
+                                <th class="headerCell">Time</th>
+                                <td class="dataCell"  id="dateTimeData"></td>
+                            </tr>
+                            <tr class="rows" id="descriptionRow">
+                                <th class="headerCell">Description:</th>
+                                <td class="dataCell"  id="descriptionData"></td>
+                            </tr>
+                            <tr class="rows" id="percipTypeRow">
+                                <th class="headerCell">Percipitation Type:</th>
+                                <td class="dataCell"  id="percipTypeData"></td>
+                            </tr>
+                        </tbody>
                     </Table>
             </div>
             <div id="backGroundVibe">
