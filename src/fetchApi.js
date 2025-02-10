@@ -23,31 +23,33 @@ export async function fetchWeather(zipCode) {
         const weatherData = await response.json();
 
         //check for empty json 
-        if (weatherData.currentConditions.length === 0) {
+        if (!weatherData.currentConditions) {
             throw new Error(`That location is not found`);
         };
         
         // get weather report current conditions and those fields 
         // current conditions 
-        let currentConditions = weatherData.currentConditions;
-        
-        // the fields 
-        let temp = currentConditions.temp;
-        let feelsLike = currentConditions.feelslike;
-        let dateTime = currentConditions.datetime; 
-        let description = weatherData.description;
-        let percipType = currentConditions.preciptype[0];
+        const currentConditions = weatherData.currentConditions;
+        const reportFields = {
+                    // the fields 
+            temp : currentConditions.temp,
+            feelsLike : currentConditions.feelslike,
+            dateTime : currentConditions.datetime, 
+            description : weatherData.description || "No description available",
+            percipType : currentConditions.preciptype ? currentConditions.preciptype[0] : "None"
+        };
 
-
-        console.log({temp, feelsLike, dateTime, description, percipType});
-
+        console.log("Process data: ", reportFields);
+        return reportFields;
     
 
     } catch (error) {
         console.error("There is something wrong: ", error);
         alert(error.message);
+
+        return null
     }
 };
 
 
-fetchZipcode(64131);
+fetchWeather(64131);
