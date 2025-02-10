@@ -11,6 +11,9 @@ export function domChanges() {
     const zipCode = searchInput.value;
     const weather = fetchWeather(zipCode);
     console.log(weather);   
+
+    // add to form 
+    
   })
 }
 

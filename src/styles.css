@@ -13,7 +13,15 @@ body{
     height: 100vh;
     margin: 0;
 }
-
+table{
+    width: 100%;
+    background: green;
+}
+tbody {
+    display: grid;
+    font-size: smaller;
+    grid-template-columns: 1fr 1fr;
+}
 #container{
     background: lightblue;
     width: 500px;
@@ -51,4 +59,9 @@ div#backGroundVibe {
     margin: .5em;
     padding: 10px;
     border: 2px solid black;
+}
+#headerRow, #dataRow {
+    display: flex;
+    flex-direction: column;
+    
 }
