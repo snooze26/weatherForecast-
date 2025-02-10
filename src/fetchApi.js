@@ -52,4 +52,4 @@ export async function fetchWeather(zipCode) {
 };
 
 
-fetchWeather(64131);
+// fetchWeather(64131);

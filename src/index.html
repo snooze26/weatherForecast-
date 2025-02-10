@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="/src/styles.css">
     <script type="module" src="/src/index.js"></script>
 </head>
@@ -15,13 +15,44 @@
         <div id="weatherReport">
 
             <div id="formContainer">
-                
-                <div id="searchBar">
-                    <input type="search" name="searchBar" id="searchBar" placeholder="Enter City, State:" autocomplete>
-                    <button id="searchBtn">Search</button>
-                </div>
+                <form action="getData" id="form">
+                    <div id="searchBar">
+                        <label for="search" id="searchLabel">Enter Zipcode:  </label>
+                        <input type="search" id="searchInput" placeholder="Zipcode:" autocomplete required>
+                        <button id="searchBtn" type="submit">Search</button>
+                    </div>
+                </form>
             </div>
-
+            <div id="showWeather">
+                    <Table id="weather">
+                        <tbody id="weatherDataBody">
+                            <tr class="rows" id="tempRow">
+                                <th class="headerCell">Temp:</th>
+                                <td class="dataCell" id="tempData"></td>
+                            </tr>
+                            <tr class="rows" id="feelsLikeRow">
+                                <th class="headerCell">Feels like:</th>
+                                <td class="dataCell"  id="feelsLikeData"></td>
+                            </tr>
+                            <tr class="rows" id="timeRow">
+                                <th class="headerCell">Time:</th>
+                                <td class="dataCell"  id="dateTimeData"></td>
+                            </tr>
+                            <tr class="rows" id="descriptionRow">
+                                <th class="headerCell">Description:</th>
+                                <td class="dataCell"  id="descriptionData"></td>
+                            </tr>
+                            <tr class="rows" id="percipTypeRow">
+                                <th class="headerCell">Percipitation Type:</th>
+                                <td class="dataCell"  id="percipTypeData"></td>
+                            </tr>
+                        </tbody>
+                    </Table>
+            </div>
+            <div id="backGroundVibe">
+                <p>weather vibe goes here or icon or whatever
+                </p>
+            </div>
         </div>
 
     </div>
