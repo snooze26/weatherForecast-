@@ -39,3 +39,16 @@ div#weatherReport {
     height: 100%;
 }
 
+div#showWeather {
+    height: 25vh;
+    margin: .5em;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+div#backGroundVibe {
+    height: 25vh;
+    margin: .5em;
+    padding: 10px;
+    border: 2px solid black;
+}
