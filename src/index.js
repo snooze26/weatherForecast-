@@ -2,6 +2,20 @@ import { fetchWeather } from "./fetchApi.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("#form");
+    // animate icon off load of dom load
+    const weatherIcon = document.querySelector(".weatherIcon");
+    
+    setTimeout(startAnimation, 500);
+    setTimeout(stopAnimation, 5000);
+
+    function startAnimation() {
+        weatherIcon.classList.add('img');
+    }
+
+    function stopAnimation() { 
+        weatherIcon.classList.remove('img');
+        void weatherIcon.offsetWidth;
+    }
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -32,8 +46,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const percipType = document.querySelector("#percipTypeData");
         percipType.textContent = `${reportFields.percipType.charAt(0).toUpperCase() + reportFields.percipType.slice(1)}`;
 
-        const weatherIcon = document.querySelector("#weatherIcon");
+
         weatherIcon.src = weatherIcons[reportFields.icon] || "icons/default.svg";
         weatherIcon.alt = `${reportFields.icon};`
+        // set off animation for icon 
+        weatherIcon.onload = () => {
+            setTimeout(startAnimation, 500);
+            setTimeout(stopAnimation, 5000);
+        }
     });
 })
+
