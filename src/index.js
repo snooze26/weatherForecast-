@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         description.textContent = `${reportFields.description}`;
 
         const percipType = document.querySelector("#percipTypeData");
-        percipType.textContent = `${reportFields.percipType}`;
+        percipType.textContent = `${reportFields.percipType.charAt(0).toUpperCase() + reportFields.percipType.slice(1)}`;
 
         const weatherIcon = document.querySelector("#weatherIcon");
         weatherIcon.src = weatherIcons[reportFields.icon] || "icons/default.svg";
