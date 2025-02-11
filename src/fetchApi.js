@@ -36,11 +36,30 @@ export async function fetchWeather(zipCode) {
             feelsLike : currentConditions.feelslike,
             dateTime : currentConditions.datetime, 
             description : weatherData.description || "No description available",
-            percipType : currentConditions.preciptype ? currentConditions.preciptype[0] : "None"
+            percipType : currentConditions.preciptype ? currentConditions.preciptype[0] : "None",
+            icon: currentConditions.icon
+        };
+        
+        // map for weather icons 
+        const weatherIcons = {
+            'clear-day' : 'icons/clear-day.svg', 
+            'clear-night' : 'icons/clear-night.svg',
+            'cloudy' : 'icons/cloudy.svg',
+            'default' : 'icons/default.svg',
+            'fog' : 'icons/fog.svg', 
+            'hail' : 'icons/hail.svg',
+            'rain' : 'icons/rain.svg',
+            'snow' : 'icons/snow.svg', 
+            'thunderstorm' : 'icons/thunderstorm.svg',
+            'tornado' : 'icons/tornado.svg',
+            'wind' : 'icons/wind.svg'
         };
 
         console.log("Process data: ", reportFields);
-        return reportFields;
+        console.log("Proccess icons: ", weatherIcons);
+
+        return {reportFields, weatherIcons};
+    
     
 
     } catch (error) {
@@ -50,6 +69,7 @@ export async function fetchWeather(zipCode) {
         return null
     }
 };
+
 
 
 // fetchWeather(64131);

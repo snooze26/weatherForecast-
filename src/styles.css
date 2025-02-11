@@ -1,8 +1,18 @@
+@keyframes iconAnimation {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(-10deg);}
+    50% {transform: rotate(10deg);}
+    75% {transform: rotate(-10deg);}
+    100% {transform: rotate(0deg);}
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+
 
 body{
     font-family: Arial, sans-serif;
@@ -25,9 +35,10 @@ tbody {
     font-size: smaller;
     padding: 10px;
     gap: 1em;
+    border: 1px inset black;
 }
 #container{
-    background: pink;
+    background: rgb(245, 245, 245);
     width: 500px;
     height: 80%;
     display: flex;
@@ -55,13 +66,25 @@ div#showWeather {
 }
 
 div#backGroundVibe {
+    display: flex; 
+    justify-content: center;
     height: 25vh;
     margin: .5em;
     padding: 10px;
 }
+
+img{ 
+    width: 150px;
+}
+
+.img {
+    animation: iconAnimation 5s;
+}
+
 
 .rows {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
